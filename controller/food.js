@@ -25,7 +25,7 @@ module.exports = {
       }
     })
   },
-  findOneFood: ()=> {
+  findOneFood: (req, res)=> {
     Food.findOne({ _id : req.params.objectId}, (err,food)=> {
       if(err) {
         res.send(`Find food ID: ${req.params.objectId} failed`)
@@ -39,7 +39,7 @@ module.exports = {
       if(err){
         res.send('Delete food failed')
       } else {
-        res.send(`Food ${food.title} deleted`)
+        res.send(`Food ${food.name} deleted`)
       }
     })
   },
@@ -47,16 +47,14 @@ module.exports = {
     Food.findOneAndUpdate(
       { _id: req.params.objectId},
       {
-        isbn: req.body.isbn,
-        title: req.body.title,
-        author: req.body.author,
-        category: req.body.category,
-        stock: req.body.stock
+        name:  req.body.name,
+        price: req.body.price,
+        expired_date: req.body.expdate
       }, (err, food)=> {
         if(err) {
           res.send('Update data Failed')
         } else {
-          res.send(`Food ${food.title} updated`)
+          res.send(`Food ${food.name} updated`)
         }
       }
     )

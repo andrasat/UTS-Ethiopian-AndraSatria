@@ -22,8 +22,8 @@ npm start OR npm test
 | /food/ | POST | Add new Book |
 | /food/ | GET | Get food list |
 | /food/find/:objectId | GET | Find one food by objectId |
-| /food/:objectId | DELETE | delete a food by objectId |
-| /food/:objectId | PUT | update a food by objectId |
+| /food/delete/:objectId | DELETE | delete a food by objectId |
+| /food/update/:objectId | PUT | update a food by objectId |
 
 ### Restaurant
 
@@ -32,5 +32,9 @@ npm start OR npm test
 | /rest/ | POST | Add new Book |
 | /rest/ | GET | Get restaurant list |
 | /rest/find/:objectId | GET | Find one restaurant by objectId |
-| /rest/:objectId | DELETE | delete a restaurant by objectId |
-| /rest/:objectId | PUT | update a restaurant by objectId |
+| /rest/delete/:objectId | DELETE | delete a restaurant by objectId |
+| /rest/update/:objectId | PUT | update a restaurant by objectId |
+
+#### Notes :
+
+`To add food in restaurant menu, separate each objectId with a comma == ","`

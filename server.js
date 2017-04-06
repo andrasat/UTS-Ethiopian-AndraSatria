@@ -7,6 +7,7 @@ const app = express()
 
 /* MONGOOSE CONNECT */
 
+mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/restaurant')
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error'))
@@ -21,8 +22,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 /* APP ROUTES */
 const food = require('./routes/food')
+const restaurant = require('./routes/restaurant')
 
 app.use('/food', food)
+app.use('/rest', restaurant)
 
 /* LISTEN PORT */
 app.listen(port)
