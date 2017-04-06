@@ -1,0 +1,27 @@
+{
+  "name": "uts-ethiopian-andrasat",
+  "version": "1.0.0",
+  "description": "mid live code phase 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrasat/UTS-Ethiopian-AndraSatria.git"
+  },
+  "author": "Andra Satria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrasat/UTS-Ethiopian-AndraSatria/issues"
+  },
+  "homepage": "https://github.com/andrasat/UTS-Ethiopian-AndraSatria#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongo-db": "^1.0.2",
+    "mongoose": "^4.9.3",
+    "nodemon": "^1.11.0"
+  }
+}
