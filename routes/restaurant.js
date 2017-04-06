@@ -14,6 +14,9 @@ router.get('/find/:objectId', Restaurant.findOneRestaurant)
 // PUT UPDATE ONE RESTAURANT
 router.put('/update/:objectId', Restaurant.editRestaurant)
 
+// PUT ADD MENU TO ONE RESTAURANT
+router.put('/menu/:objectId', Restaurant.addMenuRestaurant)
+
 // DELETE ONE RESTAURANT
 router.delete('/delete/:objectId', Restaurant.deleteRestaurant)
 

@@ -3,7 +3,7 @@ const Restaurant = require('../models/restaurant')
 module.exports = {
 
   createRestaurant : (req, res)=> {
-    let menuArr = req.body.menu ? (req.body.menu).split(',')
+    let menuArr = req.body.menu ? (req.body.menu).split(',') : req.body.menu
     let newRestaurant = Restaurant({
       name:  req.body.name,
       owner: req.body.owner,
@@ -53,7 +53,7 @@ module.exports = {
     })
   },
   editRestaurant : (req, res)=> {
-    let menuArr = (req.body.menu).split(',')
+    let menuArr = req.body.menu ? (req.body.menu).split(',') : req.body.menu
     Restaurant.findOneAndUpdate(
       { _id: req.params.objectId},
       {
@@ -67,6 +67,20 @@ module.exports = {
           res.send('Update data Failed')
         } else {
           res.send(`Restaurant ${restaurant.name} updated`)
+        }
+      }
+    )
+  },
+  addMenuRestaurant : (req, res)=> {
+    let menuArr = req.body.menu ? (req.body.menu).split(',') : req.body.menu
+    Restaurant.findOneAndUpdate(
+      { _id: req.params.objectId},
+      { menu : menuArr },
+      (err, restaurant)=> {
+        if(err) {
+          res.send('Menu failed to add')
+        } else {
+          res.send(`Menu added to ${restaurant.name}`)
         }
       }
     )

@@ -34,6 +34,7 @@ npm start OR npm test
 | /rest/find/:objectId | GET | Find one restaurant by objectId |
 | /rest/delete/:objectId | DELETE | delete a restaurant by objectId |
 | /rest/update/:objectId | PUT | update a restaurant by objectId |
+| /rest/menu/:objectId | PUT | add objectId menu to a restaurant by objectId |
 
 #### Notes :
 
